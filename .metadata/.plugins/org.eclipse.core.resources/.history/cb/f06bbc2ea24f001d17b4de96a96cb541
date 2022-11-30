@@ -1,0 +1,58 @@
+package com.misiontic.apicitas_medicas.servicios;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.hibernate.stat.internal.CategorizedStatistics;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import com.misiontic.apicitas_medicas.entidades.medico;
+import com.misiontic.apicitas_medicas.interfaces.Operaciones;
+import com.misiontic.apicitas_medicas.repositorios.MedicoRepositorio;
+
+@Service
+public class MedicoServicio implements Operaciones<medico>{
+
+	@Autowired
+	private MedicoRepositorio medicRepo;
+	
+	@Override
+	public Boolean agregar(medico objeto) {
+		medico objMedico = medicRepo.save(objeto);
+		return objMedico != null;
+	}
+
+	@Override
+	public List<medico> obtenerTodos() {
+		return medicRepo.findAll();
+	}
+
+	@Override
+	public boolean eliminar(Long id) {
+		medicRepo.deleteById(id);
+		return !medicRepo.existsById(id);
+	}
+
+	@Override
+	public boolean actualizar(medico objeto) {
+		Optional<medico> objetoverificado = medicRepo.findById(objeto.getIdMedico());
+		if (!objetoverificado.isPresent()) {
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Este Registro no existe");
+		} else{
+			
+			medicRepo.save(objeto);
+			return true;
+		}
+	}
+
+	@Override
+	public medico obtenerUno(Long id) {
+		return medicRepo.obtenerUno(id);
+	}
+
+	
+	
+}

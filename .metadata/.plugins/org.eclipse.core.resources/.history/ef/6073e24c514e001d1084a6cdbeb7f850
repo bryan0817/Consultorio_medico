@@ -1,0 +1,12 @@
+package com.misiontic.apicitas_medicas.entidades;
+
+import java.io.Serializable;
+
+public class agenda_citas implements Serializable {
+
+
+	private static final long serialVersionUID = 1L;
+	
+	
+	
+}

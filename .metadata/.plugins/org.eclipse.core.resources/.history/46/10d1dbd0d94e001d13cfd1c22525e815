@@ -1,0 +1,85 @@
+package com.misiontic.apicitas_medicas.entidades;
+
+import java.io.Serializable;
+import java.sql.Date;
+import java.sql.Time;
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="agenda_citas")
+public class agenda_citas implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_agenda_cita", nullable = false)
+	private Long idAgendaCita;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="id_medico", nullable = false, updatable = true, referencedColumnName = "id_medico")
+	private medico idMedico;
+	
+	@Column(name = "fecha_cita_medica", nullable = false)
+	private LocalDate fechaCitaMedica;
+	
+	
+	private Time hora_cita_medica;
+	
+	
+	private Integer numero_consultorio;
+
+	public agenda_citas() {
+	}
+
+	public Long getId_agenda_cita() {
+		return id_agenda_cita;
+	}
+
+	public void setId_agenda_cita(Long id_agenda_cita) {
+		this.id_agenda_cita = id_agenda_cita;
+	}
+
+	public Integer getIdmedico() {
+		return idmedico;
+	}
+
+	public void setIdmedico(Integer idmedico) {
+		this.idmedico = idmedico;
+	}
+
+	public Date getFecha_cita_medica() {
+		return fecha_cita_medica;
+	}
+
+	public void setFecha_cita_medica(Date fecha_cita_medica) {
+		this.fecha_cita_medica = fecha_cita_medica;
+	}
+
+	public Time getHora_cita_medica() {
+		return hora_cita_medica;
+	}
+
+	public void setHora_cita_medica(Time hora_cita_medica) {
+		this.hora_cita_medica = hora_cita_medica;
+	}
+
+	public Integer getNumero_consultorio() {
+		return numero_consultorio;
+	}
+
+	public void setNumero_consultorio(Integer numero_consultorio) {
+		this.numero_consultorio = numero_consultorio;
+	}
+
+}

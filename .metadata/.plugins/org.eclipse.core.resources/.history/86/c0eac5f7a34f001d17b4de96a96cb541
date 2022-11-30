@@ -1,0 +1,15 @@
+package com.misiontic.apicitas_medicas.repositorios;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.misiontic.apicitas_medicas.entidades.medico;
+
+@Repository
+public interface MedicoRepositorio extends JpaRepository<medico, Long>{
+
+	@Query("SELECT c FROM Medico c WHERE c.idMedico = :id")
+	public medico obtenerUno(Long id);
+	
+}

@@ -1,0 +1,21 @@
+package com.misiontic.apicitas_medicas.entidades;
+
+import java.io.Serializable;
+import java.sql.Date;
+import java.sql.Time;
+
+public class agenda_citas implements Serializable {
+
+
+	private static final long serialVersionUID = 1L;
+	
+	private Long id_agenda_cita;
+	private medico idmedico;
+	private Date fecha_cita_medica;
+	private Time hora_cita_medica;
+	private Integer numero_consultorio;
+	
+	
+	
+	
+}

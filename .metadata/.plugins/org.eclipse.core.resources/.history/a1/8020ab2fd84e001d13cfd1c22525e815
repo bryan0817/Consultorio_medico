@@ -1,0 +1,130 @@
+package com.misiontic.apicitas_medicas.entidades;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "medico")
+public class medico implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_medico", nullable = false)
+	private Long idMedico;
+	
+	@Column(name = "nombres_medicos", nullable = false)
+	private String nombresMedicos;
+	
+	@Column(name = "apellidos_medicos", nullable = false)	
+	private String apellidosMedicos;
+	
+	@Column(name = "documento_medicos", nullable = false)
+	private int documentoMedicos;
+	
+	@Column(name = "email_medicos", nullable = false)
+	private String emailMedicos;
+	
+	@Column(name = "celular_medicos", nullable = false)
+	private int ccelularMedicos;
+	
+	@Column(name = "edad_medicos", nullable = false)
+	private int edadMedicos;
+	
+	@Column(name = "especialidad_medicos", nullable = false)
+	private String especialidadMedicos;
+
+	
+	public medico() {
+
+	}
+
+
+	public Long getIdMedico() {
+		return idMedico;
+	}
+
+
+	public void setIdMedico(Long idMedico) {
+		this.idMedico = idMedico;
+	}
+
+
+	public String getNombresMedicos() {
+		return nombresMedicos;
+	}
+
+
+	public void setNombresMedicos(String nombresMedicos) {
+		this.nombresMedicos = nombresMedicos;
+	}
+
+
+	public String getApellidosMedicos() {
+		return apellidosMedicos;
+	}
+
+
+	public void setApellidosMedicos(String apellidosMedicos) {
+		this.apellidosMedicos = apellidosMedicos;
+	}
+
+
+	public int getDocumentoMedicos() {
+		return documentoMedicos;
+	}
+
+
+	public void setDocumentoMedicos(int documentoMedicos) {
+		this.documentoMedicos = documentoMedicos;
+	}
+
+
+	public String getEmailMedicos() {
+		return emailMedicos;
+	}
+
+
+	public void setEmailMedicos(String emailMedicos) {
+		this.emailMedicos = emailMedicos;
+	}
+
+
+	public int getCcelularMedicos() {
+		return ccelularMedicos;
+	}
+
+
+	public void setCcelularMedicos(int ccelularMedicos) {
+		this.ccelularMedicos = ccelularMedicos;
+	}
+
+
+	public int getEdadMedicos() {
+		return edadMedicos;
+	}
+
+
+	public void setEdadMedicos(int edadMedicos) {
+		this.edadMedicos = edadMedicos;
+	}
+
+
+	public String getEspecialidadMedicos() {
+		return especialidadMedicos;
+	}
+
+
+	public void setEspecialidadMedicos(String especialidadMedicos) {
+		this.especialidadMedicos = especialidadMedicos;
+	}
+
+	
+}

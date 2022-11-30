@@ -1,0 +1,15 @@
+package com.misiontic.apicitas_medicas.interfaces;
+
+import java.util.List;
+
+public interface Operaciones <T>{
+
+	public abstract Boolean agregar(T objeto);
+	
+	public abstract List<T> obtenerTodos();
+	
+	public abstract boolean eliminar(Long id);
+	
+	
+	
+}

@@ -1,0 +1,50 @@
+package com.misiontic.apicitas_medicas.servicios;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.misiontic.apicitas_medicas.entidades.medico;
+import com.misiontic.apicitas_medicas.interfaces.Operaciones;
+import com.misiontic.apicitas_medicas.repositorios.MedicoRepositorio;
+
+@Service
+public class MedicoServicio implements Operaciones<medico>{
+
+	@Autowired
+	private MedicoRepositorio medicRepo;
+	
+	@Override
+	public Boolean agregar(medico objeto) {
+		medico objMedico = medicRepo.save(objeto);
+		
+	}
+
+	@Override
+	public List<medico> obtenerTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean eliminar(Long id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean actualizar(medico objeto) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public medico obtenerUno(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
+}

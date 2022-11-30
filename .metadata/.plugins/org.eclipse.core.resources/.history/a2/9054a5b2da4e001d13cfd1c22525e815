@@ -1,0 +1,11 @@
+package com.misiontic.apicitas_medicas.repositorios;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.misiontic.apicitas_medicas.entidades.agenda_citas;
+
+@Repository
+public interface Agenda_citasRepositorio extends JpaRepository<agenda_citas, Long >{
+
+}

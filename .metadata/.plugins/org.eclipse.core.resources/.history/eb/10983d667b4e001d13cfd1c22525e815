@@ -1,0 +1,5 @@
+package com.misiontic.apicitas_medicas.repositorios;
+
+public interface MedicoRepositorio {
+
+}

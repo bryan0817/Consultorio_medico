@@ -1,0 +1,87 @@
+package com.misiontic.apicitas_medicas.entidades;
+
+import java.io.Serializable;
+import java.sql.Date;
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="agenda_citas")
+public class agenda_citas implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_agenda_cita", nullable = false)
+	private Long idAgendaCita;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="id_medico", nullable = false, updatable = true, referencedColumnName = "id_medico")
+	private medico idMedico;
+	
+	@Column(name = "fecha_cita_medica", nullable = false)
+	private LocalDate fechaCitaMedica;
+	
+	@Column(name = "hora_cita_medica", nullable = false)
+	private LocalTime horaCitaMedica;
+	
+	@Column(name = "numero_consultorio", nullable = false)
+	private Integer numeroConsultorio;
+
+	public agenda_citas() {
+	}
+
+	public Long getIdAgendaCita() {
+		return idAgendaCita;
+	}
+
+	public void setIdAgendaCita(Long idAgendaCita) {
+		this.idAgendaCita = idAgendaCita;
+	}
+
+	public medico getIdMedico() {
+		return idMedico;
+	}
+
+	public void setIdMedico(medico idMedico) {
+		this.idMedico = idMedico;
+	}
+
+	public LocalDate getFechaCitaMedica() {
+		return fechaCitaMedica;
+	}
+
+	public void setFechaCitaMedica(LocalDate fechaCitaMedica) {
+		this.fechaCitaMedica = fechaCitaMedica;
+	}
+
+	public LocalTime getHoraCitaMedica() {
+		return horaCitaMedica;
+	}
+
+	public void setHoraCitaMedica(LocalTime horaCitaMedica) {
+		this.horaCitaMedica = horaCitaMedica;
+	}
+
+	public Integer getNumeroConsultorio() {
+		return numeroConsultorio;
+	}
+
+	public void setNumeroConsultorio(Integer numeroConsultorio) {
+		this.numeroConsultorio = numeroConsultorio;
+	}
+
+
+}

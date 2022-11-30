@@ -1,0 +1,48 @@
+package com.misiontic.apicitas_medicas.servicios;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.misiontic.apicitas_medicas.entidades.agenda_citas;
+import com.misiontic.apicitas_medicas.interfaces.Operaciones;
+import com.misiontic.apicitas_medicas.repositorios.Agenda_citasRepositorio;
+
+@Service
+public class AgendaCitasServicio implements Operaciones<agenda_citas> {
+
+	@Autowired
+	private Agenda_citasRepositorio agendaRepo;
+
+	@Override
+	public Boolean agregar(agenda_citas objeto) {
+		agenda_citas objcitas = agendaRepo.save(objeto);
+		return objcitas != null;
+	}
+
+	@Override
+	public List<agenda_citas> obtenerTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean eliminar(Long id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean actualizar(agenda_citas objeto) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public agenda_citas obtenerUno(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

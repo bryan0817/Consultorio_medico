@@ -1,0 +1,108 @@
+package com.misiontic.apicitas_medicas.entidades;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "medico")
+public class medico implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	
+	private Long idMedico;
+	
+	
+	private String nombres_medicos;
+	
+	
+	private String apellidos_medicos;
+	
+	
+	private int documento_medicos;
+	
+	
+	private String email_medicos;
+	
+	
+	private int ccelular_medicos;
+	
+	
+	private int edad_medicos;
+	
+	
+	private String especialidad_medicos;
+
+	public medico() {
+
+	}
+
+	public Long getIdMedico() {
+		return idMedico;
+	}
+
+	public void setIdMedico(Long idMedico) {
+		this.idMedico = idMedico;
+	}
+
+	public String getNombres_medicos() {
+		return nombres_medicos;
+	}
+
+	public void setNombres_medicos(String nombres_medicos) {
+		this.nombres_medicos = nombres_medicos;
+	}
+
+	public String getApellidos_medicos() {
+		return apellidos_medicos;
+	}
+
+	public void setApellidos_medicos(String apellidos_medicos) {
+		this.apellidos_medicos = apellidos_medicos;
+	}
+
+	public int getDocumento_medicos() {
+		return documento_medicos;
+	}
+
+	public void setDocumento_medicos(int documento_medicos) {
+		this.documento_medicos = documento_medicos;
+	}
+
+	public String getEmail_medicos() {
+		return email_medicos;
+	}
+
+	public void setEmail_medicos(String email_medicos) {
+		this.email_medicos = email_medicos;
+	}
+
+	public int getCcelular_medicos() {
+		return ccelular_medicos;
+	}
+
+	public void setCcelular_medicos(int ccelular_medicos) {
+		this.ccelular_medicos = ccelular_medicos;
+	}
+
+	public int getEdad_medicos() {
+		return edad_medicos;
+	}
+
+	public void setEdad_medicos(int edad_medicos) {
+		this.edad_medicos = edad_medicos;
+	}
+
+	public String getEspecialidad_medicos() {
+		return especialidad_medicos;
+	}
+
+	public void setEspecialidad_medicos(String especialidad_medicos) {
+		this.especialidad_medicos = especialidad_medicos;
+	}
+
+}
